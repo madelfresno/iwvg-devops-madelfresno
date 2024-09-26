@@ -8,16 +8,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SearchTest {
-    private Search search;
+    private Searches searches;
 
     @BeforeEach
     void setUp() {
-        search = new Search();
+        searches = new Searches();
     }
 
     @Test
     void findUserFamilyNameInitialBySomeProperFraction() {
-        List<String> familyNameInitials = search.findUserFamilyNameInitialBySomeProperFraction().toList();
+        List<String> familyNameInitials = searches.findUserFamilyNameInitialBySomeProperFraction().toList();
 
         List<String> expectedInitials = List.of("F.", "B.", "L.", "B.");
         // 1 -> F.
@@ -26,5 +26,11 @@ class SearchTest {
         // 5 -> B.
 
         assertEquals(expectedInitials, familyNameInitials);
+    }
+
+    @Test
+    void findUserIdByAllProperFraction() {
+        List<String> ids = searches.findUserIdByAllProperFraction().toList();
+        assertTrue(ids.isEmpty());
     }
 }
