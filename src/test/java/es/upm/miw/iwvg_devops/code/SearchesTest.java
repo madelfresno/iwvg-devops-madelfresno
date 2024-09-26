@@ -39,4 +39,13 @@ class SearchesTest {
         Fraction fraction = searches.findHighestFraction();
         assertEquals(new Fraction(2, 1), fraction);
     }
+
+    @Test
+    void findUserNameBySomeImproperFraction() {
+        List<String> names = searches.findUserNameBySomeImproperFraction().toList();
+
+        List<String> expectedNames = List.of("Oscar", "Ana", "Oscar", "Antonio", "Paula");
+
+        assertEquals(expectedNames, names);
+    }
 }
