@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SearchTest {
+class SearchesTest {
     private Searches searches;
 
     @BeforeEach
@@ -32,5 +32,11 @@ class SearchTest {
     void findUserIdByAllProperFraction() {
         List<String> ids = searches.findUserIdByAllProperFraction().toList();
         assertTrue(ids.isEmpty());
+    }
+
+    @Test
+    void findHighestFraction() {
+        Fraction fraction = searches.findHighestFraction();
+        assertEquals(new Fraction(2, 1), fraction);
     }
 }

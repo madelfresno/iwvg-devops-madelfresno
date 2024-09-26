@@ -24,7 +24,7 @@ package es.upm.miw.iwvg_devops.code;
  * La división de dos fracciones es otra fracción que tiene: Por numerador el producto de los extremos. Por denominador el producto de los
  * medios. Invertir fraccion
  */
-public class Fraction {
+public class Fraction implements Comparable<Fraction> {
     private int numerator;
     private int denominator;
 
@@ -100,5 +100,10 @@ public class Fraction {
         if (numerator != otherFraction.getNumerator()) return false;
         if (denominator != otherFraction.getDenominator()) return false;
         return true;
+    }
+
+    @Override
+    public int compareTo(Fraction fraction) {
+        return Double.compare(decimal(), fraction.decimal());
     }
 }
