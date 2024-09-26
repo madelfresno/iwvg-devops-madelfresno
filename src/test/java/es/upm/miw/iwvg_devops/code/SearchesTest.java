@@ -47,5 +47,7 @@ class SearchesTest {
         List<String> expectedNames = List.of("Oscar", "Ana", "Oscar", "Antonio", "Paula");
 
         assertEquals(expectedNames, names);
+
+        // Comentario para simular cambio por bug
     }
 }
