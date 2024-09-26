@@ -39,6 +39,46 @@ class FractionTest {
     }
 
     @Test
+    void Should_IsProper_ReturnTrue_When_NumeratorIsLessThanDenominator() {
+        Fraction fraction = new Fraction(1, 2);
+        assertTrue(fraction.isProper());
+    }
+
+    @Test
+    void Should_IsImproper_ReturnTrue_When_NumeratorIsGreaterThanDenominator() {
+        Fraction fraction = new Fraction(2, 1);
+        assertTrue(fraction.isImproper());
+    }
+
+    @Test
+    void Should_IsEquivalent_ReturnTrue() {
+        Fraction fractionOne = new Fraction(2, 3);
+        Fraction fractionTwo = new Fraction(4, 6);
+        assertTrue(fractionOne.isEquivalent(fractionTwo));
+    }
+
+    @Test
+    void Should_Add_Sum_TwoFractions() {
+        Fraction fractionOne = new Fraction(3, 5);
+        Fraction fractionTwo = new Fraction(4, 7);
+        assertTrue(fractionOne.add((fractionTwo)).equals(new Fraction(41, 35)));
+    }
+
+    @Test
+    void Should_Multiply_Return_ANewFraction() {
+        Fraction fractionOne = new Fraction(3, 5);
+        Fraction fractionTwo = new Fraction(4, 7);
+        assertTrue(fractionOne.multiply(fractionTwo).equals(new Fraction(12, 35)));
+    }
+
+    @Test
+    void Should_Divide_Return_ANewFraction() {
+        Fraction fractionOne = new Fraction(3, 5);
+        Fraction fractionTwo = new Fraction(4, 7);
+        assertTrue(fractionOne.divide(fractionTwo).equals(new Fraction(21, 20)));
+    }
+
+    @Test
     void Should_ToString_ReturnString_AsJSON() {
         int numerator = 5;
         int denominator = 2;
