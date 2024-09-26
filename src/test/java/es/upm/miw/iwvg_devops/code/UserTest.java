@@ -72,7 +72,7 @@ class UserTest {
     @Test
     void Should_GetFractions_ReturnNonEmpty_With_Constructor() {
         List<Fraction> fractions = new ArrayList<>();
-        fractions.add(new Fraction());
+        fractions.add(new Fraction(1, 1));
         User user = new User("1", "Miguel", "Delfre", fractions);
         assertFalse(user.getFractions().isEmpty());
     }
@@ -81,7 +81,7 @@ class UserTest {
     void Should_SetFractions_AddOneFraction() {
         User user = new User();
         List<Fraction> fractions = new ArrayList<>();
-        fractions.add(new Fraction());
+        fractions.add(new Fraction(1, 1));
         user.setFractions(fractions);
         assertEquals(1, user.getFractions().size());
     }
@@ -89,7 +89,7 @@ class UserTest {
     @Test
     void Should_AddFractions_AddOneFraction() {
         User user = new User();
-        user.addFraction(new Fraction());
+        user.addFraction(new Fraction(1, 1));
         assertEquals(1, user.getFractions().size());
     }
 
